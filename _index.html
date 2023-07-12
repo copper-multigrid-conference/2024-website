@@ -1,0 +1,155 @@
+{% extends "_layout.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="d-block mx-auto main-block">
+    <h2 class="title text-danger">{{ info.date }}</h2>
+  </div >
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <!-- from https://commons.wikimedia.org/wiki/File:Copper_Trail.jpg retrieved on 20160711 -->
+        <!-- This work has been released into the public domain by its
+          author, DebateLord at English Wikipedia. This applies worldwide.
+          In some countries this may not be legally possible; if so: DebateLord grants
+          anyone the right to use this work for any purpose, without any conditions,
+          unless such conditions are required by law. -->
+          <img class="img-fluid img-rounded" src="./images/640px-Copper_Trail.jpg" alt="Copper Mountain">
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <div class="card copper-color">
+        <div class="card-body">
+          <h4 class="card-title">Conference Deadlines</h4>
+          <ul class="list-unstyled">
+            <li> <i class="bi bi-calendar-week-fill mx-2"></i> <a href="{{deadlines.studentabs.url}}"       > {{deadlines.studentabs.title}}:       </a> {{deadlines.studentabs.date}}</li>
+            <li> <i class="bi bi-calendar-week-fill mx-2"></i> <a href="{{deadlines.studentpaper.url}}"     > {{deadlines.studentpaper.title}}:     </a> {{deadlines.studentpaper.date}}</li>
+            <li> <i class="bi bi-calendar-week-fill mx-2"></i> <a href="{{deadlines.abstracts.url}}"        > {{deadlines.abstracts.title}}:        </a> {{deadlines.abstracts.date}}</li>
+            <li> <i class="bi bi-calendar-week-fill mx-2"></i> <a href="{{deadlines.earlyregistration.url}}"> {{deadlines.earlyregistration.title}}:</a> {{deadlines.earlyregistration.date}}</li>
+            <li> <i class="bi bi-calendar-week-fill mx-2"></i> <a href="{{deadlines.lodging.url}}"          > {{deadlines.lodging.title}}:          </a> {{deadlines.lodging.date}}</li>
+            <li> <i class="bi bi-calendar-week-fill mx-2"></i> <a href="{{deadlines.specialissue.url}}"     > {{deadlines.specialissue.title}}:     </a> {{deadlines.specialissue.date}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-top">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <h6>Organized by</h6>
+      Front Range Scientific Computations, Inc.
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <h6>Co-Organized by</h6>
+      The <a href="https://www.colorado.edu/">University of Colorado</a>,
+      <a href="https://www.sandia.gov/ccr">Sandia National Laboratories</a>, and
+      <a href="https://www.illinois.edu/">University of Illinois Urbana-Champaign</a>.
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <h6>Sponsored by</h6>
+      <a href="https://www.doe.gov">DOE</a>
+      <!-- <a href="https://www.ibm.com">IBM</a>, -->
+      <!--
+        <a href="https://www.llnl.gov/casc">LLNL</a>,
+        <a href="https://www.lanl.gov">LANL</a>,
+        <a href="https://www.sandia.gov">Sandia</a>
+      -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <h6>In cooperation with</h6>
+      <a href="https://www.siam.org/">SIAM</a>
+      <br/>
+      <i>contact: <a href="people.html">Luke Olson</a></i>
+      <br/>
+      <img class="img-responsive center-block" src="./images/blue_non-co-branded.png" alt="SIAM" width="120"/>
+    </div>
+  </div>
+
+  <div class="row g-md-4 py-5 row-cols-1 row-cols-md-3">
+    <div class="col">
+      <div class="d-flex align-items-start copper-color rounded">
+        <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-info-circle"></i>
+        </div>
+        <div>
+          <h4 class="fs-2 text-body-emphasis">Conference Information</h4>
+          <p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-people-fill mx-2"></i><a href="people.html#chair">Conference Chairs</a>
+              <li><i class="bi bi-people-fill mx-2"></i><a href="people.html#committee">Conference Program Committee</a>
+                <li><i class="bi bi-people-fill mx-2"></i><a href="about.html#topics">Conference Highlights</a></li>
+          </ul>
+          <br/>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-file-earmark-text-fill mx-2"></i><a href="student.html#details">Student Paper Competition</a>
+              <li><i class="bi bi-trophy mx-2"></i><a href="student.html#past">Student Paper Competition List of Previous Winners</a>
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="d-flex align-items-start copper-color rounded">
+        <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-clock-history"></i>
+        </div>
+        <div>
+          <h4 class="fs-2 text-body-emphasis">Conference History</h4>
+          <p>
+          <a href="https://grandmaster.colorado.edu/copper/">Full history</a>
+          <br/>
+          Recent conferences:
+          <ul class="small list-unstyled">
+            {% for c in previous_conferences %}
+            {% if  c.year > 2012 and 'Iterative' in c.title %}
+            <li>
+              {% if c.url %}
+              <a href="{{c.url}}">
+                {% endif %}
+                <b>{{c.year}}</b> - {{c.title}}
+                {% if c.url %}
+              </a>
+              {% endif %}
+              {% if c.journal %}
+              <ul class="list-unstyled">
+                <li><i class="bi bi-journals mx-2"></i> <a href="{{c['journal-url']}}"> {{c['journal-abbv']}} Special Issue </a> </li>
+              </ul>
+              {% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="d-flex align-items-start copper-color rounded">
+        <div class="icon-square text-body-emphasis d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="bi bi-snow2"></i>
+        </div>
+        <div>
+          <h4 class="fs-2 text-body-emphasis">Copper Mountain Links</h4>
+          <p>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-snow mx-2"></i><a href="about.html#skipasses">Lift tickets</a></li>
+            <li><i class="bi bi-snow mx-2"></i><a href="about.html#rentals">Equipment rentals</a></li>
+          </ul>
+          Travel information:
+          <ul class="list-unstyled">
+            <li><i class="bi bi-bus-front-fill mx-2"></i><a href="about.html#location">Shuttle information</a></li>
+          </ul>
+          Copper Mtn adventures and activities :
+          <ul class="list-unstyled">
+            <li><i class="bi bi-snow mx-2"></i><a href="https://www.coppercolorado.com/things-to-do/activities-amenities/activities-winter-all">Activities</a></li>
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

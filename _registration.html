@@ -1,0 +1,56 @@
+{% extends "_layout.html" %}
+{% block title %}Registration{% endblock %}
+{% block content %}
+
+  <div class="container">
+    <div class="row">
+      <h4>Conference Registration</h4>
+    </div>
+
+      <div class="mx-auto" style="width: 400px; margin: 50px;">
+              Registration on or before
+              <b>{{deadlines.earlyregistration.date}}</b>:
+
+<table class="table">
+  <tr><td>SIAM Member (early)     </td><td>{{info.registration.siam_early}}</td></tr>
+  <tr><td>non-SIAM Member (early) </td><td>{{info.registration.nonsiam_early}}</td></tr>
+  <tr><td>student                 </td><td>{{info.registration.student_early}}</td></tr>
+</table>
+
+      </div>
+      <div class="mx-auto" style="width: 400px; margin: 50px;">
+              Registration after
+              <b>{{deadlines.earlyregistration.date}}</b>:
+
+<table class="table">
+  <tr><td>SIAM Member            </td><td>{{info.registration.siam}}</td></tr>
+  <tr><td>non-SIAM Member        </td><td>{{info.registration.nonsiam}}</td></tr>
+  <tr><td>student                </td><td>{{info.registration.student}}</td></tr>
+</table>
+
+      </div>
+
+      <p>
+      To receive the early, discounted rates you must register on or before
+              <b>{{deadlines.earlyregistration.date}}</b>:
+      </p>
+
+      <p>
+      Registration will take place through EventZilla at the following link:
+      {% if 'TBD' == info.registrationlink %}
+        <div class="alert alert-warning" role="alert">
+        Registration information coming soon.
+        </div>
+      {% else %}
+        <div class="text-xs-center">
+          <a role="button" class="btn btn-primary btn-lg" href="{{info.registrationlink}}">Register</a>
+        </div>
+      {% endif %}
+      </p>
+
+      <p>
+      Additional questions?  Please contact the <a href="people.html">conference chairs</a>.
+      </p>
+
+  </div>
+{% endblock %}
