@@ -15,9 +15,9 @@
 
       <p>
       To submit an abstract for a presentation, please use the following:
+      </p>
 
       <br>
-      <p>
       {% if 'TBD' == info.submissionlink %}
         <div class="alert alert-warning" role="alert">
         Submission information coming soon.
@@ -27,15 +27,15 @@
           <a role="button" class="btn btn-primary btn-lg" href="{{info.submissionlink}}">Submit an abstract</a>
         </div>
       {% endif %}
-      </p>
 
       <br>
+      <p>
       At the top of the submission page you can read the submission instructions.
       There are two options for submission:
+      </p>
       <ol>
         <li>An abstract for participation in the regular program (deadline {{deadlines.abstracts.date}}).</li>
         <li>An abstract and paper for the Student paper competition.  See <a href="student.html">instructions and deadlines </a> for further details.  Each submission to the student paper competition will be considered for the regular program -- a separate submission is not needed.</li>
       </ol>
-      </p>
   </div>
 {% endblock %}
