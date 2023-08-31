@@ -6,8 +6,8 @@
 
 - name: John Shadid
   email: jnshadi@sandia.gov
-  affil: Sandia National Laboratories
-  url: https://cfwebprod.sandia.gov/cfdocs/CompResearch/templates/insert/profile.cfm?jnshadi
+  affil: Sandia National Laboratories, University of New Mexico
+  url: https://www.sandia.gov/ccr/staff/john-n-shadid/
   role: Conference Chair
 
 - name: Xiao- Chuan Cai
@@ -17,7 +17,7 @@
 
 - name: Luis Chacon
   affil: Los Alamos National Laboratory
-  url: https://www.researchgate.net/profile/Luis_Chacon8/
+  url: https://www.lanl.gov/search-capabilities/profiles/luis-chacon.shtml
   role: Program Committee
 
 - name: Edmond Chow
@@ -47,12 +47,12 @@
 
 - name: Misha Kilmer
   affil: Tufts University
-  url: http://www.tufts.edu/~mkilme01/
+  url: https://mkilme01.pages.tufts.edu/
   role: Program Committee
 
 - name: Xiaoye Sherry Li
   affil: Lawrence Berkeley National Laboratory
-  url: http://crd-legacy.lbl.gov/~xiaoye/
+  url: https://portal.nersc.gov/project/sparse/xiaoye-web/
   role: Program Committee
 
 - name: Tom Manteuffel
@@ -67,7 +67,7 @@
 
 - name: James Nagy
   affil: Emory University
-  url: http://www.mathcs.emory.edu/faculty-member.php?name=james-nagy
+  url: http://www.math.emory.edu/~nagy/
   role: Program Committee
 
 - name:  Kengo Nakajima
@@ -103,7 +103,7 @@
 
 - name: Ray Tuminaro
   affil: Sandia National Laboratories
-  url: https://cfwebprod.sandia.gov/cfdocs/CompResearch/templates/insert/profile.cfm?rstumin
+  url: https://www.sandia.gov/ccr/staff/raymond-s-tuminaro/
   role: Program Committee
 
 - name: Carol Woodward
