@@ -6,12 +6,12 @@ lodginglink: TBD
 year: 2024
 date: Sunday April 14 - Friday April 19, 2024
 registration:
-  siam: TBD
-  nonsiam: TBD
-  student: TBD
-  siam_early: TBD
-  nonsiam_early: TBD
-  student_early: TBD
+  siam: 625
+  nonsiam: 675
+  student: 100
+  siam_early: 560
+  nonsiam_early: 620
+  student_early: 100
 
 groupcode: TBD
 rates:
