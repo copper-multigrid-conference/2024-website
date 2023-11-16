@@ -25,7 +25,7 @@ files = [\
 '_about.html',
 '_index.html',
 #'_layout.html',
-#'_lodging.html',
+'_lodging.html',
 '_people.html',
 '_registration.html',
 '_student.html',

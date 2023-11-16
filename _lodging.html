@@ -1,0 +1,38 @@
+{% extends "_layout.html" %}
+{% block title %}Lodging{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h2>Cambria Hotel Copper Mountain</h2>
+    <br/>
+    <a href="{{info.lodginglink}}">{{info.lodginglink}}</a><br/>
+    <p>
+       Located in Center Village within walking distance to not only
+       the Conference Center meeting space but activities, restaurants
+       and shopping.  Double Queen hotel rooms are available
+       as are Double Queen Junior suites, with a little sitting area with a pull-out sleeper sofa.
+    </p>
+
+    <h4>Per night rates are as follows</h4>
+    <pre>
+        {% for d in info.rates -%}
+        {% set dd = d.popitem() %}
+        {{ dd[0] }}: {{ dd[1] }}
+        {%- endfor %}
+    </pre>
+
+    <p>
+    Make your room reservation directly with Cambria <b>early</b>. We
+    have a block of rooms reserved for the conference which is released 30 days
+    before the start of the conference. In some previous years, we have indeed
+    run out of rooms, so please reserve your rooms as soon as possible.
+
+    <p> State and local taxes (16.275%) will be added to the cost of
+      the room. Attendees will be responsible making their own
+      reservations.  Please call the Cambria Hotel
+      reservation line at (970) 306-7907, and identify yourself as a
+      member of the <b>CU Math Conference</b>, with group code <b>{{info.groupcode}}</b> in order to get the special rates, or book online <a href="{{info.lodginglink}}">here</a>.
+
+</div>
+
+{% endblock %}
