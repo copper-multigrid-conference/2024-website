@@ -1,0 +1,100 @@
+%\usepackage{ifthen}
+%\usepackage{xifthen}
+\tikzset{font=\fontfamily{phv}\selectfont}
+\definecolor{tab-green}{HTML}{2ca02c}
+\definecolor{tab-blue}{HTML}{1f77b4}
+\definecolor{tab-red}{HTML}{d62728}
+\definecolor{tab-gray}{HTML}{7f7f7f}
+\begin{tikzpicture}
+%\def\mult{4}
+%\def\n{8}
+%\draw[step=\mult/\n] (0,0) grid (\mult,\mult);
+
+% general spacing
+\def\m{1.9}
+
+% general spacing
+\def\r{0.3}
+
+% draw the days
+%\node[anchor=south] (times)     at (-1.5*\m,0) {};
+\node[anchor=south] (sunday)    at (0,0) {Sunday};
+\node[anchor=south] (monday)    at (1*\m,0) {Monday};
+\node[anchor=south] (tuesday)   at (2*\m,0) {Tuesday};
+\node[anchor=south] (wednesday) at (3*\m,0) {Wednesday};
+\node[anchor=south] (thursday)  at (4*\m,0) {Thursday};
+\node[anchor=south] (friday)  at (5*\m,0) {Friday};
+
+% draw the times
+\newcount\ti
+\ti=1 %
+\foreach \t in {8am,9,10,11,12pm,1,2,3,4,5,6pm,7,8,9}
+{
+  \node[right] (\t) at (-1.2*\m, -\r*\ti) {\t};
+  \global\advance\ti by1
+}
+
+%\draw[color=black!20] ( -0.5*\m, 0) -- ( -0.5*\m, -14*\r);
+%\draw[color=black!20] ( 0.5*\m, 0) -- ( 0.5*\m, -14*\r);
+%\draw[color=black!20] ( 1.5*\m, 0) -- ( 1.5*\m, -14*\r);
+%\draw[color=black!20] ( 2.5*\m, 0) -- ( 2.5*\m, -14*\r);
+%\draw[color=black!20] ( 3.5*\m, 0) -- ( 3.5*\m, -14*\r);
+%\draw[color=black!20] ( 4.5*\m, 0) -- ( 4.5*\m, -14*\r);
+%\draw[color=black!20] ( 5.5*\m, 0) -- ( 5.5*\m, -14*\r);
+
+\newcommand{\session}[7][]{
+\ifthenelse{\isempty{#7}}
+  {\coordinate (A) at ($(#2)+(-0.45*\m,-#3*\r+7*\r-0.5*\r)$);
+   \coordinate (B) at ($(#2)+( 0.45*\m,-#4*\r+7*\r-0.5*\r)$);}{}
+\ifthenelse{\equal{#7}{A}}
+  {\coordinate (A) at ($(#2)+(-0.45*\m,-#3*\r+7*\r-0.5*\r)$);
+   \coordinate (B) at ($(#2)+(-0.05*\m,-#4*\r+7*\r-0.5*\r)$);}{}
+\ifthenelse{\equal{#7}{B}}
+  {\coordinate (A) at ($(#2)+( 0.05*\m,-#3*\r+7*\r-0.5*\r)$);
+   \coordinate (B) at ($(#2)+( 0.45*\m,-#4*\r+7*\r-0.5*\r)$);}{}
+\filldraw[line width=0.05mm,color=#1!60,  fill=#1]
+(A)
+rectangle
+(B)
+node[color=#1,text=white,midway,#6]{{#5}};
+}
+
+%\session[green]{monday}{13}{16}{test}{}{}
+%\session[green]{monday}{19}{21}{test}{}{A}
+%\session[green]{monday}{19}{21}{test}{}{B}
+
+% Sunday
+\session[tab-red]{sunday}{14}{17}{Tutorial}{rotate=0}{}
+\session[tab-blue]{sunday}{19}{21}{Reception}{}{}
+\session[tab-blue]{wednesday}{19}{21}{Banquet}{}{}
+
+% Monday
+\session[tab-gray]{monday}{8}{10}{Talks}{}{}
+\session[tab-gray]{monday}{10.5}{12.5}{Talks}{}{}
+\session[tab-gray]{monday}{16.5}{18.5}{Talks}{}{}
+
+% Tuesday
+\session[tab-gray]{tuesday}{8}{10}{Talks}{}{}
+\session[tab-gray]{tuesday}{10.5}{12.5}{Talks}{}{}
+\session[tab-gray]{tuesday}{16.5}{18.5}{Talks}{}{}
+
+% Wednesday
+\session[tab-gray]{wednesday}{8}{10}{Talks}{}{}
+\session[tab-gray]{wednesday}{10.5}{12.5}{Talks}{}{}
+\session[tab-gray]{wednesday}{16.5}{18.5}{Talks}{}{}
+
+% Thursday
+\session[tab-gray]{thursday}{8}{10}{Talks}{}{}
+\session[tab-gray]{thursday}{10.5}{12.5}{Talks}{}{}
+\session[tab-gray]{thursday}{16.5}{18.5}{Talks}{}{}
+
+% Friday
+\session[tab-gray]{friday}{8}{10}{Talks}{}{}
+\session[tab-gray]{friday}{10.5}{12.5}{Talks}{}{}
+
+\session[tab-green]{monday}{13}{16}{collab.}{}{}
+\session[tab-green]{tuesday}{13}{16}{collab.}{}{}
+\session[tab-green]{wednesday}{13}{16}{collab.}{}{}
+\session[tab-green]{thursday}{13}{16}{collab.}{}{}
+
+\end{tikzpicture}
