@@ -66,7 +66,7 @@ node[color=#1,text=white,midway,#6]{{#5}};
 % Sunday
 \session[tab-red]{sunday}{14}{17}{Tutorial}{rotate=0}{}
 \session[tab-blue]{sunday}{19}{21}{Reception}{}{}
-\session[tab-blue]{wednesday}{19}{21}{Banquet}{}{}
+\session[tab-blue]{thursday}{19}{21}{Banquet}{}{}
 
 % Monday
 \session[tab-gray]{monday}{8}{10}{Talks}{}{}
