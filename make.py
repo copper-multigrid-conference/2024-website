@@ -76,7 +76,7 @@ for f in files:
         fout.write(html)
 
 # copy these directories as-is to the webdir
-livedirs = ['images', 'css', 'bootstrap', 'bootstrap-icons']
+livedirs = ['images', 'css', 'bootstrap', 'bootstrap-icons', 'program-static']
 for d in livedirs:
     if os.path.isdir(d):
         shutil.copytree(d, os.path.join(liveweb, d))

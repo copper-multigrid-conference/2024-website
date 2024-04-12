@@ -13,6 +13,7 @@ registration:
   nonsiam_early: 620
   student_early: 100
 
+shuttlecode: FRSCI
 groupcode: 6114
 rates:
     - Double Queen Room: $185 (before taxes and fees)
